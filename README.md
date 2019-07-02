@@ -1,6 +1,6 @@
 ## DB設計
 
-##users table
+## users table
 
 |Column|Type|Options|
 |------|----|-------|
