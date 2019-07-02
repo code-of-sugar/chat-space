@@ -4,8 +4,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|integer|index: true,null:false,unique: true|
-|mail|integer|null: false|
+|name|string|index: true,null:false,unique: true|
+|mail|string|null: false|
 
 ### Association
 - has_many :groups, through: members
