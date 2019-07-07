@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ChatSpace
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .wrapper
+      .chat-side
+        .chat-side__user
+          .user__box
+            %p.box__user-name
+              test-user
+            %ul.box__menu
+              %li.menu__new-group
+                %i.fa.fa-edit
+              %li.menu__edit-user
+                %i.fa.fa-cog
+        .chat-side__grouplist
+          .group__box
+            .box__group-name
+              test-group
+            .box__latest-message
+              hello!
+          .group__box
+            .box__group-name
+              sample-group
+            .box__latest-message
+              test
+    .chat-group
+    .messages
+    
