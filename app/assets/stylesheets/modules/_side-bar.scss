@@ -1,47 +1,63 @@
 .wrapper{
-  .chat-side{
+  .sidebar{
     position: fixed;  
     width: 300px;
     height: 100vw;
-      &__user{
-        height: 100px;
-        line-height: 100px;
-        padding: 0 20px;
-        background-color: #253141;
-        .user__box{
-          display: flex;
-          width: 100%;
-          color: #ffffff;
-            .box__user-name{
-              font-size: 16px;
-              font-weight: bold;
-            }
-            .box__menu{
-              display: flex;
-              margin-left: auto;
-              li{
-                padding-left: 5px;
-              }
-            }
+
+    &__user-box{
+      height: 100px;
+      line-height: 100px;
+      padding: 0 20px;
+      background-color: #253141;
+    }
+
+    &__user-contents{
+      display: flex;
+      width: 100%;
+      color: #ffffff;
+
+      &--user-name{
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      &--menu{
+        display: flex;
+        margin-left: auto;
+
+        li{
+          text-decoration: none;
+          a:visited{ color: #ffffff};
+          padding-left: 5px;
+          
         }
       }
-      &__grouplist{
-        height: calc(100vw - 82px);
-        background-color: #2f3e51;
+    }
+
+    &__group-box{
+      height: calc(100vw - 82px);
+      background-color: #2f3e51;
+      color: #ffffff;
+      a{
+        text-decoration: none;
         color: #ffffff;
-        .group__box{
-          padding: 20px;
-          .box__group-name{
-            font-size: 15px;
-            font-weight: bold;
-            padding-bottom: 5px;
-          }
-          .box__latest-message{
-            font-size: 11px;
-            font-weight: bold;
-          }
-        
-        }
       }
+    }
+    
+    &__group-contents{
+      padding: 20px;
+
+      &--group-name{
+        font-size: 15px;
+        font-weight: bold;
+        padding-bottom: 5px;
+      }
+
+      &--latest-message{
+        font-size: 11px;
+        font-weight: bold;
+      }
+        
+    }
   }
 }

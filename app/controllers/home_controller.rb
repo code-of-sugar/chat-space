@@ -1,4 +1,4 @@
 class HomeController < ApplicationController
-def chat
+def message
 end
 end
