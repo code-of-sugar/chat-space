@@ -1,4 +1,7 @@
 class HomeController < ApplicationController
-def message
+
+  def message  
+  end
+  
 end
-end
+ 
