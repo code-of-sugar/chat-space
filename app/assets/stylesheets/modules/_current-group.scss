@@ -1,7 +1,14 @@
-.current-group__box{
-  height: 99px;
+.main-contents{
+  height: 100vh;
   width: calc(100vw - 300px);
   float: right;
+}
+
+.current-group__box{
+  position: fixed;
+  z-index: 1;
+  height: 99px;
+  width: calc(100vw - 300px);
   border-bottom: thin solid #eeeeee;
 }
 
