@@ -1,11 +1,8 @@
 .message-post{
   &__box{
-    position: absolute;
     height: calc(100vh - 190px);
-    width: calc(100% - 300px);
+    width: 100%;
     background-color: #fafafa;
-    left: 300px;
-    top: 100px;
     overflow: scroll;
   }
 
