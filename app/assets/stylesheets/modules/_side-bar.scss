@@ -1,8 +1,7 @@
 .wrapper{
-  .sidebar{
-    position: fixed;  
+  .sidebar{ 
     width: 300px;
-    height: 100vw;
+    height: 100vh;
     float:left;
 
     &__user-box{
@@ -36,7 +35,7 @@
     }
 
     &__group-box{
-      height: calc(100vw - 82px);
+      height: calc(100vh - 100px);
       background-color: #2f3e51;
       color: #ffffff;
       a{
