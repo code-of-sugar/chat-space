@@ -1,0 +1,41 @@
+.message-post{
+  &__box{
+    position: absolute;
+    height: calc(100vh - 190px);
+    width: calc(100% - 300px);
+    background-color: #fafafa;
+    left: 300px;
+    top: 100px;
+    overflow: scroll;
+  }
+
+  &__messages{
+    padding: 46px 40px;
+  }
+
+  &__post{
+    padding-bottom: 40px;
+  }
+
+  &__upper-info{
+    display: flex;
+
+    &--user-name{
+      margin-right: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #434A54; 
+    }
+
+    &--time{
+      font-size: 12px;
+      color: #999999;
+    }
+  }
+
+  &__message{
+    padding-top: 10px;
+    font-size: 14px;
+    color: #434A54
+  }
+}
