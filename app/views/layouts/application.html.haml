@@ -7,5 +7,36 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = render 'layouts/flash-message'
-    =yield
+    .notice
+      .notice__message
+        グループを作成しました
+    .wrapper
+      .sidebar
+        .sidebar__user-box
+          .sidebar__user-contents
+            %p.sidebar__user-contents--user-name
+              test-user
+            %ul.sidebar__user-contents--menu
+              %li.sidebar__user-contents--new-group
+                =link_to "http://localhost:3000/" do
+                  %i.fa.fa-edit
+              %li.sudebar__user-contents--edit-user
+                =link_to "http://localhost:3000/" do
+                  %i.fa.fa-cog
+
+        .sidebar__group-box
+          .sidebar__group-contents
+            =link_to "http://localhost:3000/" do
+              .sidebar__group-contents--group-name
+                test-group
+              .sidebar__group-contents--latest-message
+                hello!
+
+          .sidebar__group-contents
+            =link_to "http://localhost:3000/" do
+              .sidebar__group-contents--group-name
+                sample-group
+              .sidebar__group-contents--latest-message
+                test
+
+      =yield
