@@ -1,0 +1,30 @@
+= render 'layouts/side-bar'
+
+.main-contents
+  .current-group__box
+    =link_to edit_group_path(params[:group_id]) do
+      .current-group__group-edit
+        Edit
+
+    .current-group__group-name
+      = @group.name
+
+    .current-group__memberlist
+      Member：
+      %ul.current-group__memberlist--list
+        - @group.users.each do |user|
+          %li.current-group__memberlist--member
+            = user.name
+
+  .message-post__box
+    .message-post__messages
+      =render "layouts/message"
+
+  .form
+    = form_for [@group,@message] do |f|
+      .form__text-box
+        = f.text_field :body, class: 'form__text-box--text', placeholder: 'type a message'
+        = f.label :image, class: "form__text-box--img-post" do
+          %i.fa.fa-image
+          = f.file_field :image, class: 'form__text-box--file-choice'
+        = f.submit 'Send', class: "form__send-btn"

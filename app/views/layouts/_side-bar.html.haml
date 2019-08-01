@@ -1,0 +1,22 @@
+.wrapper
+  .sidebar
+    .sidebar__user-box
+      .sidebar__user-contents
+        %p.sidebar__user-contents--user-name
+          = current_user.name
+        %ul.sidebar__user-contents--menu
+          %li.sidebar__user-contents--new-group
+            =link_to new_group_path do
+              %i.fa.fa-edit
+          %li.sudebar__user-contents--edit-user
+            =link_to edit_user_path(current_user) do
+              %i.fa.fa-cog
+
+    .sidebar__group-box
+      - current_user.groups.each do |group|
+        .sidebar__group-contents
+          =link_to group_messages_path(group) do
+            .sidebar__group-contents--group-name
+              = group.name
+            .sidebar__group-contents--latest-message
+              = group.show_last_message

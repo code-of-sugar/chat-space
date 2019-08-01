@@ -1,71 +1,9 @@
-.message-post__post
-  .message-post__upper-info
-    .message-post__upper-info--user-name
-      test-user
-    .message-post__upper-info--time
-      2019/07/03(Wed) 13:47:12
-  .message-post__message
-    test-message
-    
-.message-post__post
-  .message-post__upper-info
-    .message-post__upper-info--user-name
-      test-user
-    .message-post__upper-info--time
-      2019/07/03(Wed) 13:47:12
-  .message-post__message
-    test-message
-
-.message-post__post
-  .message-post__upper-info
-    .message-post__upper-info--user-name
-      test-user
-    .message-post__upper-info--time
-      2019/07/03(Wed) 13:47:12
-  .message-post__message
-    test-message
-
-.message-post__post
-  .message-post__upper-info
-    .message-post__upper-info--user-name
-      test-user
-    .message-post__upper-info--time
-      2019/07/03(Wed) 13:47:12
-  .message-post__message
-    test-message
-
-.message-post__post
-  .message-post__upper-info
-    .message-post__upper-info--user-name
-      test-user
-    .message-post__upper-info--time
-      2019/07/03(Wed) 13:47:12
-  .message-post__message
-    test-message
-
-.message-post__post
-  .message-post__upper-info
-    .message-post__upper-info--user-name
-      test-user
-    .message-post__upper-info--time
-      2019/07/03(Wed) 13:47:12
-  .message-post__message
-    test-message
-
-.message-post__post
-  .message-post__upper-info
-    .message-post__upper-info--user-name
-      test-user
-    .message-post__upper-info--time
-      2019/07/03(Wed) 13:47:12
-  .message-post__message
-    test-message
-
-.message-post__post
-  .message-post__upper-info
-    .message-post__upper-info--user-name
-      test-user
-    .message-post__upper-info--time
-      2019/07/03(Wed) 13:47:12
-  .message-post__message
-    test-message  
+- @messages.each do |message|
+  .message-post__post
+    .message-post__upper-info
+      .message-post__upper-info--user-name
+        = message.user.name
+      .message-post__upper-info--time
+        = message.created_at
+    .message-post__message
+      = message.body
