@@ -43,6 +43,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rails-controller-testing'
   gem 'faker'
+  gem 'capybara'
 end
 
 group :development do
