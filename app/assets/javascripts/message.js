@@ -1,10 +1,8 @@
 $(function(){
   function buildHTML(message){
 
-    var image = ''
-    if(message.image.url){
-      image = `<img src="${message.image.url}">`;
-    }
+    var image = message.image.url ? `<img src="${message.image.url}">` : ``
+
     var html =  `<div class="message-post__post">
                    <div class="message-post__upper-info">
                      <div class="message-post__upper-info--user-name">
@@ -37,7 +35,7 @@ $(function(){
       var html = buildHTML(data);
       $('.message-post__messages').append(html)
       $('.message-post__box').animate({scrollTop: $('.message-post__box').get(0).scrollHeight}, 'fast');
-      $('.form__text-box--text').val('');
+      $('#new_message')[0].reset();
       $('.form__send-btn').prop('disabled',false);
     })
     .fail(function(){
