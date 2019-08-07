@@ -6,4 +6,7 @@
       .message-post__upper-info--time
         = message.created_at
     .message-post__message
-      = message.body
+      -if message.body.present?
+        .message-post__message
+          = message.body
+      =  image_tag message.image.url if message.image.present?
