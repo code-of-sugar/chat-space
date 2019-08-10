@@ -3,7 +3,7 @@ $(function(){
 
     var image = message.image.url ? `<img src="${message.image.url}">` : ``
 
-    var html =  `<div class="message-post__post">
+    var html =  `<div class="message-post__post", data-id="${message.id}">
                    <div class="message-post__upper-info">
                      <div class="message-post__upper-info--user-name">
                        ${message.user_name}
@@ -20,49 +20,7 @@ $(function(){
     return html;
   }
 
-  var buildMessageHTML = function(message){
-    if (message.content && message.image.url){
-      var html = `<div class="message-post__post", data-id="${message.id}">
-                    <div class="message-post__upper-info">
-                      <div class="message-post__upper-info--user-name">
-                        ${message.user_name}
-                      </div>
-                      <div class="message-post__upper-info--time">
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <div class="message-post__message">
-                      <p> ${message.body} </p>
-                      <img src="${message.image.url}">
-                  </div>`
-    }else if (message.content){
-      var html = `<div class="message-post__post", data-id="${message.id}">
-                    <div class="message-post__upper-info">
-                      <div class="message-post__upper-info--user-name">
-                        ${message.user_name}
-                      </div>
-                      <div class="message-post__upper-info--time">
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <div class="message-post__message">
-                      <p> ${message.body} </p>
-                  </div>`
-    }else if (message.image.url){
-      var html = `<div class="message-post__post", data-id="${message.id}">
-                    <div class="message-post__upper-info">
-                      <div class="message-post__upper-info--user-name">
-                        ${message.user.name}
-                      </div>
-                      <div class="message-post__upper-info--time">
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <div class="message-post__message">
-                      <img src="${message.image.url}">
-                  </div>`
-    }
-  }
+
 
   
   $('#new_message').on('submit',function(e){
@@ -100,7 +58,7 @@ $(function(){
     .done(function(messages) {
       var insertHTML = '';
       messages.forEach(function(message){
-        insertHTML = buildMessageHTML(message)
+        insertHTML = buildHTML(message)
         $('.message-post__messages').append(insertHTML)    
       })
       $('.message-post__box').animate({scrollTop: $('.message-post__box').get(0).scrollHeight}, 'fast');
