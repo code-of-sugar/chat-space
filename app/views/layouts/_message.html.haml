@@ -1,5 +1,5 @@
 - @messages.each do |message|
-  .message-post__post
+  .message-post__post{data:{"id":"#{message.id}"}}
     .message-post__upper-info
       .message-post__upper-info--user-name
         = message.user.name
@@ -7,6 +7,6 @@
         = message.created_at
     .message-post__message
       -if message.body.present?
-        .message-post__message
+        %p
           = message.body
       =  image_tag message.image.url if message.image.present?
