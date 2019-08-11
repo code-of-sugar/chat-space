@@ -64,7 +64,7 @@ $(function(){
       $('.message-post__box').animate({scrollTop: $('.message-post__box').get(0).scrollHeight}, 'fast');
     })
     .fail(function() {
-      console.log('error');
+      alert('自動更新に失敗しました');
     });
   };
    $(function() {
