@@ -61,7 +61,9 @@ $(function(){
         insertHTML = buildHTML(message)
         $('.message-post__messages').append(insertHTML)    
       })
-      $('.message-post__box').animate({scrollTop: $('.message-post__box').get(0).scrollHeight}, 'fast');
+      if (messages.length >= 1){
+        $('.message-post__box').animate({scrollTop: $('.message-post__box').get(0).scrollHeight}, 'fast');
+      }
     })
     .fail(function() {
       alert('自動更新に失敗しました');
