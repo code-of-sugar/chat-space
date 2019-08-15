@@ -4,7 +4,7 @@
       .message-post__upper-info--user-name
         = message.user.name
       .message-post__upper-info--time
-        = message.created_at
+        = message.created_at.strftime('%Y/%m/%d(%a) %H:%M:%S')
     .message-post__message
       -if message.body.present?
         %p
